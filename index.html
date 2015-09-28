@@ -1,8 +1,33 @@
 <html>
 <head>
 	<title>influence</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
 </head>
 <body>
-	Bonjour
+<h1>Bonjour</h1>	
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input  id="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" value="gdsghdsjh@jkhdkjs.com">
+  </div>
+  <button onclick="mail()" type="submit" class="btn btn-default">Submit</button>
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		var socket = io();
+		function mail(){
+			var email = $('#email').val();
+			console.log(email);
+			socket.emit('mail',email);
+		};
+	</script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
